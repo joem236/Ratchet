@@ -14,7 +14,7 @@ use Ratchet\RFC6455\Messaging\CloseFrameChecker;
 use Ratchet\RFC6455\Handshake\ServerNegotiator;
 use Ratchet\RFC6455\Handshake\RequestVerifier;
 use React\EventLoop\LoopInterface;
-use GuzzleHttp\Psr7 as gPsr;
+use GuzzleHttp\Psr7\Message;
 use Throwable;
 
 /**
