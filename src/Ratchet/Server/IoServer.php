@@ -55,8 +55,11 @@ class IoServer {
      * @return IoServer
      */
     public static function factory(MessageComponentInterface $component, $port = 80, $address = '0.0.0.0') {
-        $loop   = LoopFactory::create();
-        $socket = new Reactor($address . ':' . $port, $loop);
+        /**
+         * @var LoopInterface
+         */
+        $loop   =  Loop::get();
+        $socket = new Reactor($address . ':' . $port, [], $loop);
 
         return new static($component, $socket, $loop);
     }
